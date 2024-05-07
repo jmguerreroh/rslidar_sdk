@@ -10,7 +10,7 @@
 
 To get point cloud through ROS/ROS2,  please just use this SDK. 
 
-To integrate the Lidar driver into your own projects, please use the rs_driver.
+To integrate the Lidar driver into your projects, please use the rs_driver.
 
 ### 1.1 LiDAR Supported
 
@@ -34,9 +34,7 @@ To integrate the Lidar driver into your own projects, please use the rs_driver.
 - XYZI - x, y, z, intensity
 - XYZIRT - x, y, z, intensity, ring, timestamp
 
-## 2 Download
-
-### 2.1 Download via Git 
+## 2 Download via Git
 
 Download the rslidar_sdk as below. 
 
@@ -50,7 +48,7 @@ git clone https://github.com/jmguerreroh/rslidar_sdk.git
 
 ### 3.1 ROS2
 
-To use rslidar_sdk in the ROS2 environment, please install below libraries.
+To use rslidar_sdk in the ROS2 environment, please install the below libraries.
 + Ubuntu 16.04 - Not supported
 + Ubuntu 18.04 - ROS2 Eloquent desktop
 + Ubuntu 20.04 - ROS2 Galactic desktop
@@ -71,7 +69,7 @@ sudo apt-get update
 sudo apt-get install -y libyaml-cpp-dev
 ```
 
-### 3.4 libpcap (Essential) 
+### 3.3 libpcap (Essential) 
 
 version: >= v1.7.4
 
@@ -81,9 +79,7 @@ Installation:
 sudo apt-get install -y  libpcap-dev
 ```
 
-## 4 Compile & Run
-
-### 4.3 Compile with ROS2 colcon
+## 4 Compile & Run with ROS2 colcon
 
 ```sh
 cd ~/rslidar_ws/src
@@ -97,7 +93,7 @@ ros2 launch rslidar_sdk start.launch.py
 
 ## 5 Introduction to parameters
 
-To change behaviors of rslidar_sdk, change its parameters. please read the following links for detail information.
+To change the behaviors of rslidar_sdk, change its parameters. please read the following links for detailed information.
 
 [Intro to parameters](doc/intro/02_parameter_intro.md)
 
