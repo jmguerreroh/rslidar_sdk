@@ -1,6 +1,9 @@
-# 1 **rslidar_sdk**
+# **rslidar_sdk**
 
-## 1 Introduction
+This project has been modified to use the RoboSense Lidar with ROS2
+
+
+## 1. Introduction
 
 **rslidar_sdk** is the Software Development Kit of the RoboSense Lidar based on Ubuntu. It contains:
 
@@ -8,11 +11,11 @@
 + The ROS support, 
 + The ROS2 support,
 
-To get point cloud through ROS/ROS2,  please just use this SDK. 
+To get the point cloud through ROS/ROS2, please just use this SDK. 
 
 To integrate the Lidar driver into your projects, please use the rs_driver.
 
-### 1.1 LiDAR Supported
+### 1.1. LiDAR Supported
 
 - RS-LiDAR-16
 - RS-LiDAR-32
@@ -29,12 +32,13 @@ To integrate the Lidar driver into your projects, please use the rs_driver.
 - RS-LiDAR-M2
 - RS-LiDAR-E1
 
-### 1.2 Point Type Supported
+### 1.2. Point Type Supported
 
 - XYZI - x, y, z, intensity
 - XYZIRT - x, y, z, intensity, ring, timestamp
 
-## 2 Download via Git
+
+## 2. Download via Git
 
 Download the rslidar_sdk as below. 
 
@@ -44,19 +48,17 @@ cd ~/rslidar_ws/src
 git clone https://github.com/jmguerreroh/rslidar_sdk.git
 ```
 
-## 3 Dependencies
 
-### 3.1 ROS2
+## 3. Dependencies
+
+### 3.1. ROS2
 
 To use rslidar_sdk in the ROS2 environment, please install the below libraries.
-+ Ubuntu 16.04 - Not supported
-+ Ubuntu 18.04 - ROS2 Eloquent desktop
-+ Ubuntu 20.04 - ROS2 Galactic desktop
 + Ubuntu 22.04 - ROS2 Humble desktop
 
-For installation, please refer to https://index.ros.org/doc/ros2/Installation/Eloquent/Linux-Install-Debians/
+For installation, please refer to https://docs.ros.org/en/humble/Installation.html
 
-### 3.2 Yaml (Essential) 
+### 3.2. Yaml (Essential) 
 
 version: >= v0.5.2
 
@@ -69,7 +71,7 @@ sudo apt-get update
 sudo apt-get install -y libyaml-cpp-dev
 ```
 
-### 3.3 libpcap (Essential) 
+### 3.3. libpcap (Essential) 
 
 version: >= v1.7.4
 
@@ -79,8 +81,12 @@ Installation:
 sudo apt-get install -y  libpcap-dev
 ```
 
-## 4 Compile & Run with ROS2 colcon
 
+## 4. Compile & Run with ROS2 colcon
+
+Configure your IP address to 192.168.1.102
+
+Execute:
 ```sh
 cd ~/rslidar_ws/src
 vcs import < rslidar_sdk/thirdparty.repos
@@ -91,7 +97,7 @@ ros2 launch rslidar_sdk start.launch.py
 ```
 
 
-## 5 Introduction to parameters
+## 5. Introduction to parameters
 
 To change the behaviors of rslidar_sdk, change its parameters. please read the following links for detailed information.
 
@@ -100,8 +106,7 @@ To change the behaviors of rslidar_sdk, change its parameters. please read the f
 [Intro to hidden parameters](doc/intro/03_hiding_parameters_intro.md)
 
 
-
-## 6 Quick start
+## 6. Quick start
 
 Below are some quick guides to use rslidar_sdk. 
 
@@ -112,8 +117,7 @@ Below are some quick guides to use rslidar_sdk.
 [Change Point Type](doc/howto/05_how_to_change_point_type.md) 
 
 
-
-## 7 Advanced Topics
+## 7. Advanced Topics
 
 [Online Lidar - Advanced topics](doc/howto/07_online_lidar_advanced_topics.md) 
 
