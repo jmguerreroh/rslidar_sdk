@@ -88,45 +88,6 @@ message(=============================================================)
 # Dependencies Setup
 #========================
 
-#ROS#
-find_package(roscpp 1.12 QUIET)
-
-if(roscpp_FOUND)
-
-  message(=============================================================)
-  message("-- ROS Found. ROS Support is turned On.")
-  message(=============================================================)
-
-  add_definitions(-DROS_FOUND)
-
-  find_package(roslib QUIET)
-  include_directories(${roscpp_INCLUDE_DIRS} ${roslib_INCLUDE_DIRS})
-  set(ROS_LIBS ${roscpp_LIBRARIES} ${roslib_LIBRARIES})
-
-  #Catkin#
-  if(${COMPILE_METHOD} STREQUAL "CATKIN")
-
-    add_definitions(-DRUN_IN_ROS_WORKSPACE)
-
-    find_package(catkin REQUIRED COMPONENTS
-      roscpp
-      sensor_msgs
-      roslib)
-
-    catkin_package(CATKIN_DEPENDS 
-      sensor_msgs 
-      roslib)
-
-  endif(${COMPILE_METHOD} STREQUAL "CATKIN")
-
-else(roscpp_FOUND)
-
-  message(=============================================================)
-  message("-- ROS Not Found. ROS Support is turned Off.")
-  message(=============================================================)
-
-endif(roscpp_FOUND)
-
 #ROS2#
 find_package(rclcpp QUIET)
 
